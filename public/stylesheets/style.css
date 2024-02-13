@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+}
+.topBar {
+  height: 5vh;
+  width: 100vw;
+  background-color: #353434;
+}
+
+.sideBar {
+  height: 95vh;
+  width: 4vw;
+  background-color: #2e2d2d;
+}
+
+.filesContainer {
+  height: 95vh;
+  width: 15vw;
+  background-color: #242222;
+  padding: 1vw;
+}
+
+.lowerPart {
+  height: 95vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+.codingPart {
+  height: 95vh;
+  width: 81vw;
+  background-color: #201f1f;
+}
+.fileName {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.fileName .icons {
+  margin-top: 1vh;
+}
+.icons a{
+  text-decoration: none;
+  color: white;
+  margin:0 0.3vw;
+}
+.fileName h3 {
+  font-size: 2vw;
+}
+.refresh {
+  text-decoration: none;
+  color: white;
+}
+.fileField {
+  display: none;
+}
+#folderForm .fileField {
+  margin-right: 10vw;
+}
+
+.file {
+  display: flex;
+  gap: 10px;
+}
+.fileContainer {
+  display: flex;
+  gap: 0.5vw;
+}
+.fileWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1vh;
+}
+
+.file-wrapper {
+  margin-top: 8vh;
+}
+.file-wrapper h3 {
+  font-weight: 100;
+  font-size: 1vw;
+}
+.file-wrapper .icons {
+  opacity: 0;
+}
+#nameOffile {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2vw;
+}
+.fileWrapper:hover.fileWrapper .icons {
+  opacity: 1;
+}
+
+#writting-area {
+  height: 90%;
+  width: 100%;
+  padding: 1vw 2vw;
+  color: white;
+  background-color: #201f1f;
+  font-size: 1.2vw;
+  font-family: sans-serif;
+}
+.File-nav {
+  height: 10%;
+  min-width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #1a1818;
+}
+.File-nav h3 {
+  font-size: 1.5vw;
+  font-family: gilroy;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+
+.fileRename{
+  height: 100%;
+  width: 100%;
+  background-color: #14131370;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  
+}
+.fileRename form{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #141313c8;
+
+  border: 1px solid rgb(67, 65, 65);
+} 
+.fileRename form input{
+  background-color: #242222;
+  color: white;
+  font-size: 1.2vw;
+  padding: 0.8vw 1vw;
+  border: none;
+}
+

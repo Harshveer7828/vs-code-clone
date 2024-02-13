@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div id="main">
+    <div class="fileRename">
+      <form action="/rename/update/<%=fileopenName%>" method="post">
+        <input type="text" name="fileName">
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="topBar">
+
+    </div>
+    <div class="lowerPart">
+      <div class="sideBar">
+      </div>
+      <div class="filesContainer">
+        <div class="fileName">
+          <h3>
+            <%=folder%>
+          </h3>
+          <div class="icons">
+            <i style="transition: all ease 0.2s;" class="new-file-create ri-file-add-line"></i>
+            <i class="ri-folder-2-line"></i>
+            <a class="refresh" href="/refresh"><i class="ri-refresh-line"></i></a>
+          </div>
+        </div>
+        <div class="fileName">
+          <form id="fileForm" action="/newfile">
+            <input class="fileField"
+              style="padding: 1vh 0; border-radius: 2px; border: 1px solid rgb(48, 48, 208); margin-top: 5px; background-color: #323131;color: white;  "
+              type="text" placeholder="File name" name="name">
+          </form>
+          <form id="folderForm" action="/newFolder">
+            <input class="fileField folderfield"
+              style="padding: 1vh 0; border-radius: 2px; border: 1px solid rgb(48, 48, 208); margin-top: 5px; background-color: #323131;color: white;  "
+              type="text" placeholder="folder name" name="name">
+          </form>
+        </div>
+        <div class="file-wrapper">
+          <% files.forEach(function(file){ %>
+            <div class="fileWrapper">
+              <div class="fileContainer">
+                <% if(file.isDirectory()){ %>
+                  <i class="ri-folder-2-line"></i>
+                  <% } else { %>
+                    <i class="ri-file-2-line"></i>
+                    <% }%>
+                      <a id="nameOffile"  href="/file/<%= file.name %>">
+                        <%= file.name %>
+                      </a>
+              </div>
+              <div class="icons">
+                <a href="/rename/<%=file.name%>"><i class="ri-pencil-fill"></i></a>
+                <% if(file.isDirectory()){ %>
+                  <a href="/folder/delete/<%= file.name %>"><i class="ri-delete-bin-2-fill"></i></a>
+                <% } else { %>
+                  <a href="/file/delete/<%= file.name %>"><i class="ri-delete-bin-2-fill"></i></a>
+                <% } %>
+              </div>
+            </div>
+            <%}) %>
+        </div>
+      </div>
+      <div class="codingPart">
+        <div class="File-nav">
+          <h3 ><%=fileopenName%></h3>
+        </div>
+        <textarea name="file-container" id="writting-area" cols="30" rows="10"><%=data%></textarea>
+      </div>
+    </div>
+  </div>
+  <script src="/javascripts/script.js"></script>
+</body>
+
+</html>
